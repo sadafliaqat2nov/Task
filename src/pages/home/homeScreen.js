@@ -9,7 +9,6 @@ import styles from '../../styles';
 import * as util from '../../utilities';
 import {RefreshControl} from 'react-native-gesture-handler';
 let row = [];
-let openRow = null;
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
