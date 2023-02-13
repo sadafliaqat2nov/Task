@@ -83,4 +83,11 @@ export default StyleSheet.create({
     height: util.WP(0.3),
     backgroundColor: util.colors.windowTint,
   },
+  deleteBox: {
+    backgroundColor: util.colors.error,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: util.WP(21),
+    height: '100%',
+  },
 });

@@ -13,7 +13,6 @@ export const getPosts = createAsyncThunk(
       .catch(error => {
         thunkAPI.rejectWithValue(error?.data || error);
       });
-
     return getAllPosts;
   },
 );
@@ -35,7 +34,6 @@ const postsSlice = createSlice({
       state.loading = true;
     },
     [getPosts.fulfilled]: (state, {payload}) => {
-      console.log('payload---', payload);
       state.posts = payload;
       state.loading = false;
     },
