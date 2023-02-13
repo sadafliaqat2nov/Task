@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
 import styles from '../styles';
 import styled from 'styled-components/native';
 
@@ -14,7 +13,7 @@ const CardText = styled.Text`
 `;
 
 const infoHolder = props => {
-  const {item, index} = props;
+  const {item} = props;
   return (
     <CardView>
       <CardTextTitle>
@@ -25,4 +24,4 @@ const infoHolder = props => {
   );
 };
 
-export default infoHolder;
+export default React.memo(infoHolder);

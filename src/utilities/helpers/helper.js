@@ -1,5 +1,5 @@
 import {BallIndicator} from 'react-native-indicators';
-import * as util from '../../utilities';
+import * as util from '..';
 import styles from '../../styles';
 import styled from 'styled-components/native';
 

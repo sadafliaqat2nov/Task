@@ -59,6 +59,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingVertical: util.WP(3),
+    backgroundColor: util.colors.primaryColor,
   },
   genericLoader: {
     backgroundColor: util.colors.windowTint,
