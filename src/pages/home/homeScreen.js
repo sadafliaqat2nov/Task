@@ -26,8 +26,13 @@ const HomeScreen = () => {
   }, []);
 
   useEffect(() => {
-    setArrayholder(posts);
-    setSortedData(posts);
+    if (posts.length) {
+      setArrayholder(posts);
+      setSortedData(posts);
+      if (!!text) {
+        searchData(text);
+      }
+    }
   }, [posts]);
 
   const searchData = text => {
