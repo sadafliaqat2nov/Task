@@ -115,11 +115,7 @@ const HomeScreen = () => {
 
   const onRefresh = () => {
     setIsRefreshing(true);
-    setText('');
     dispatch(getPosts());
-    setArrayholder(posts);
-    setSortedData(posts);
-    setEnableSort(false);
     setIsRefreshing(false);
     setDeletedData([]);
   };
