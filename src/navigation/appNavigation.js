@@ -1,33 +1,21 @@
-import * as React from 'react';
-import {View, StatusBar} from 'react-native';
-import {navigationRef} from '../utilities/navigation/navigation';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../pages/home/homeScreen';
-import styles from '../styles/index';
-import * as util from '../utilities';
+import HomeScreen from '../pages/Home/HomeScreen';
 
 const Stack = createStackNavigator();
-class AppContainer extends React.Component {
-  render() {
-    return (
-      <View style={styles.home.mainView}>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor={util.colors.primaryColor}
+const appNavigation = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="homeScreen"
+          component={HomeScreen}
+          options={{headerShown: false}}
         />
-        <NavigationContainer ref={navigationRef}>
-          <Stack.Navigator initialRouteName={'homeScreen'}>
-            <Stack.Screen
-              name="homeScreen"
-              component={HomeScreen}
-              options={{headerShown: false}}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </View>
-    );
-  }
-}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
-export default AppContainer;
+export default appNavigation;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput, TouchableOpacity, Image} from 'react-native';
+import {TextInput} from 'react-native';
 import styles from '../styles/index';
 import * as util from '../utilities';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -19,48 +19,43 @@ const IconButton = styled.TouchableOpacity`
   ${styles.home.rowDirection}
 `;
 
-class searchBar extends React.Component {
-  render() {
-    const {searchAction, value, setValue, filterAction, sortAction} =
-      this.props;
+const SearchBar = props => {
+  const {value, sortAction, onChange} = props;
 
-    return (
-      <SearchBarView>
-        <SearchBarComponent>
-          <TouchableOpacity onPress={searchAction}>
-            <Ionicons
-              name={value.length ? 'close' : 'search'}
-              size={util.WP(5)}
-              color={util.colors.frost}
-              style={styles.home.searchIcon}
-            />
-          </TouchableOpacity>
-          <TextInput
-            value={value}
-            style={styles.home.searchBarTextInput}
-            onChangeText={setValue}
-            placeholderTextColor={util.colors.frost}
-            placeholder="Search"
-            returnKeyType="search"
-          />
-        </SearchBarComponent>
-        <IconButton onPress={filterAction}>
-          <FontAwesome
-            name="sliders"
-            size={util.WP(6)}
-            color={util.colors.drawer}
-          />
-        </IconButton>
-        <IconButton onPress={sortAction}>
-          <FontAwesome5
-            name="sort-amount-down"
-            size={util.WP(6)}
-            color={util.colors.drawer}
-          />
-        </IconButton>
-      </SearchBarView>
-    );
-  }
-}
+  return (
+    <SearchBarView>
+      <SearchBarComponent>
+        <Ionicons
+          name={value.length ? 'close' : 'search'}
+          size={util.WP(5)}
+          color={util.colors.frost}
+          style={styles.home.searchIcon}
+        />
+        <TextInput
+          value={value}
+          style={styles.home.searchBarTextInput}
+          onChangeText={onChange}
+          placeholderTextColor={util.colors.frost}
+          placeholder="Search"
+          returnKeyType="search"
+        />
+      </SearchBarComponent>
+      <IconButton>
+        <FontAwesome
+          name="sliders"
+          size={util.WP(6)}
+          color={util.colors.drawer}
+        />
+      </IconButton>
+      <IconButton onPress={sortAction}>
+        <FontAwesome5
+          name="sort-amount-down"
+          size={util.WP(6)}
+          color={util.colors.drawer}
+        />
+      </IconButton>
+    </SearchBarView>
+  );
+};
 
-export default searchBar;
+export default SearchBar;

@@ -1,3 +1,14 @@
 export const constants = {
-  BASEURL: 'https://api.agify.io/',
+  API_URL: "https://jsonplaceholder.typicode.com/posts",
+
+  reducerTypes: {
+    REQUEST_INIT: "REQUEST_INIT",
+    REQUEST_REFETCH: "REQUEST_REFETCH",
+    REQUEST_SUCCESS: "REQUEST_SUCCESS",
+    REQUEST_FAIL: "REQUEST_FAIL",
+    SET_SORTED_DATA: "SET_SORTED_DATA",
+    UPDATE_DATA: "UPDATE_DATA",
+    UPDATE_DETELED_DATA: "UPDATE_DETELED_DATA",
+    TEXT_CHANGE: "TEXT_CHANGE",
+  },
 };

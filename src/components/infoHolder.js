@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../styles';
 import styled from 'styled-components/native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
-import {View, TouchableOpacity} from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import * as util from '../utilities';
 
@@ -17,7 +17,7 @@ const CardText = styled.Text`
 `;
 
 const infoHolder = props => {
-  const {item, infoRef, onSwipeableOpen, handleDelete} = props;
+  const { item, infoRef, handleDelete } = props;
 
   const leftSwipe = () => {
     return (
@@ -38,7 +38,7 @@ const infoHolder = props => {
     <Swipeable
       renderRightActions={leftSwipe}
       ref={infoRef}
-      onSwipeableOpen={onSwipeableOpen}>
+    >
       <CardView>
         <CardTextTitle>
           {item.id} - {item?.title}

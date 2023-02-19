@@ -1,28 +1,12 @@
-import axios from 'axios';
-import * as util from '../utilities';
-const create = (baseURL = util.constants.BASEURL) => {
-  const api = axios.create({
-    headers: {
-      'Cache-Control': 'no-cache',
-    },
-    timeout: 10000,
-  });
-  const getPosts = params => {
-    return new Promise((resolve, reject) => {
-      api
-        .get('https://jsonplaceholder.typicode.com/posts')
-        .then(response => {
-          resolve(response.data);
-        })
-        .catch(err => {
-          reject(err);
-        });
-    });
-  };
-  return {
-    getPosts,
-  };
-};
-export default {
-  create,
+import { constants } from "../utilities";
+
+export const fetchPostsList = async () => {
+  try {
+    const response = await fetch(constants.API_URL);
+    const jsonResponse = await response.json();
+    return jsonResponse
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 };
